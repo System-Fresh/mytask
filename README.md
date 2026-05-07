@@ -45,3 +45,7 @@ The application is built using the Next.js App Router architecture and uses Pris
 `*` Moment.js
 `*` NextJS Top Loader
 
+## Authentication & Authorization
+ `-` Secure user authentication using Clerk
+ `-` User-specific task management
+ `-` Authorized user support for shared task visibility
