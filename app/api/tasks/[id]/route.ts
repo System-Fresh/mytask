@@ -2,6 +2,8 @@ import prisma from "@/app/utils/connect";
 import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic"; 
+
 export async function DELETE(req: Request, { params }: { params: { id: string}}) {
     try {
         const { userId } = auth();
