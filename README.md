@@ -55,13 +55,28 @@ The application is built using the Next.js App Router architecture and uses Pris
     `*` git clone <your-repository-url>
      `*`cd mytask2
  - 2. Install Dependencies
-      npm install
+     `*` npm install
  - 3. Configure Environment Variables
       Create a .env.local file in the root directory:
-      DATABASE_URL="your_mongodb_connection_string"
-      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="your_clerk_publishable_key"
-      CLERK_SECRET_KEY="your_clerk_secret_key"
+     `*` DATABASE_URL="your_mongodb_connection_string"
+     `*` NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="your_clerk_publishable_key"
+     `*` CLERK_SECRET_KEY="your_clerk_secret_key"
  - 4. Generate Prisma Client
-      npx prisma generate
+      `*`npx prisma generate
  - 5. Run the Development Server
-      npm run dev
+     `*` npm run dev
+
+## Validation & Error Handling
+The application includes:
+
+- Input validation for required task fields
+- Graceful API error handling
+- User feedback notifications
+- Database operation error protection
+
+## Testing
+The project structure supports unit testing and can be extended using:
+
+- Jest
+- React Testing Library
+- Prisma test utilities
