@@ -25,7 +25,7 @@ function CreateContent() {
         setDescription(editTask.description);
         setDate(editTask.date);
         setCompleted(editTask.isCompleted);
-        // setImportant(editTask.isImportant);
+        setImportant(editTask.isImportant);
       }
     }, [editTask]);
 
@@ -121,7 +121,8 @@ function CreateContent() {
         <div className="input-control toggler">
             <label htmlFor="completed">Toggle Completed</label>
             <input 
-            value={completed.toString()}
+            checked={completed}
+            // value={completed.toString()}
             onChange={handleChange("completed")}
             type="checkbox" 
             name='completed'
@@ -132,7 +133,8 @@ function CreateContent() {
         <div className="input-control toggler">
             <label htmlFor="important">Toggle Important</label>
             <input 
-            value={important.toString()}
+            checked={important}
+            // value={important.toString()}
             onChange={handleChange("important")}
             type="checkbox" 
             name='important'

@@ -64,21 +64,24 @@ export async function GET(req: Request) {
 }
 export async function PUT(req: Request) {
     try {
-        const { userId, sessionClaims } = auth();
+        const { userId } = auth();
+        if (!userId)  return NextResponse.json({ error: "Unauthorized", status: 401});
+       
+        // Get user and check if admin
+        const user = await clerkClient.users.getUser(userId)
+        const isAdmin = user.publicMetadata.role === "admin";
+
+
         const { id, title, description, date, isCompleted, important } = await req.json();
 
-        const isAdmin = sessionClaims?.metadata?.role === "admin";
 
-        if (!userId) {
-           return NextResponse.json({ error: "Unauthorized", status: 401});
-        }
 
-        if (!id) {
-            return NextResponse.json({ error: "Task ID is required", status: 400});
-        }
+        // if (!id) {
+        //     return NextResponse.json({ error: "Task ID is required", status: 400});
+        // }
         const task = await prisma.task.update({
             where: {
-                id,
+                id: id,
               ...(isAdmin ? {} :  {userId: userId}),
             },
             data: {
