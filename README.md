@@ -52,8 +52,8 @@ The application is built using the Next.js App Router architecture and uses Pris
 
  ## Installation & Setup
  - 1. Clone the Repository
-     git clone <your-repository-url>
-     cd mytask2
+    `*` git clone <your-repository-url>
+     `*`cd mytask2
  - 2. Install Dependencies
       npm install
  - 3. Configure Environment Variables
